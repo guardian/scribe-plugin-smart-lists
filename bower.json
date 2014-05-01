@@ -1,0 +1,6 @@
+{
+  "name": "scribe-plugin-smart-lists",
+  "dependencies": {
+    "scribe-common": "0.0.1"
+  }
+}
