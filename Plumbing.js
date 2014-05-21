@@ -14,7 +14,7 @@ module.exports = function (pipelines) {
   var smartListsPluginRequireJs = requireJS({
     paths: {
       'scribe-common': '../bower_components/scribe-common/src',
-      'lodash-modern': '../bower_components/lodash-amd/modern'
+      'lodash-amd': '../bower_components/lodash-amd'
     }
   });
 
