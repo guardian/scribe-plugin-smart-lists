@@ -3,6 +3,7 @@
   "version": "0.1.2",
   "main": "src/scribe-plugin-smart-lists.js",
   "dependencies": {
+    "scribe-common": "~0.0.3"
   },
   "devDependencies": {
     "chai": "~1.9.1",
