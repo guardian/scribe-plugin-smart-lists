@@ -1044,6 +1044,10 @@ define('scribe-common/element',['lodash-amd/modern/collections/contains'], funct
     return contains(blockElementNames, node.nodeName);
   }
 
+  function isSelectionMarkerNode(node) {
+    return (node.nodeType === Node.ELEMENT_NODE && node.className === 'scribe-marker');
+  }
+
   function unwrap(node, childNode) {
     while (childNode.childNodes.length > 0) {
       node.insertBefore(childNode.childNodes[0], childNode);
@@ -1053,6 +1057,7 @@ define('scribe-common/element',['lodash-amd/modern/collections/contains'], funct
 
   return {
     isBlockElement: isBlockElement,
+    isSelectionMarkerNode: isSelectionMarkerNode,
     unwrap: unwrap
   };
 
