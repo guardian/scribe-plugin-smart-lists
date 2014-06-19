@@ -2,7 +2,7 @@
   "name": "scribe-plugin-smart-lists",
   "dependencies": {
     "lodash-amd": "2.4.1",
-    "scribe-common": "0.0.3"
+    "scribe-common": "0.0.4"
   },
   "devDependencies": {
     "requirejs": "~2.1.9",
