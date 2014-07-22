@@ -13,7 +13,7 @@ var write     = require('plumber-write');
 module.exports = function (pipelines) {
   var smartListsPluginRequireJs = requireJS({
     paths: {
-      'scribe-common': '../bower_components/scribe-common/src',
+      'scribe-common': '../bower_components/scribe-common',
       'lodash-amd': '../bower_components/lodash-amd'
     }
   });
