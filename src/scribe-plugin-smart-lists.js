@@ -33,8 +33,15 @@ define(['scribe-common/src/element'], function (element) {
       function removeSelectedTextNode() {
         var selection = new scribe.api.Selection();
         var container = selection.selection.anchorNode;
-        if (container.nodeType === Node.TEXT_NODE) {
-          container.parentNode.removeChild(container);
+        /**
+         * Firefox: Selection object never gets access to text nodes, only
+         * parent elements.
+         * As per: http://jsbin.com/rotus/1/edit
+         */
+        var textNode = (container.nodeType === Node.TEXT_NODE && container)
+          || (container.firstChild.nodeType === Node.TEXT_NODE && container.firstChild)
+        if (textNode) {
+          textNode.parentNode.removeChild(textNode);
         } else {
           throw new Error('Cannot empty non-text node!');
         }
