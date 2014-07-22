@@ -69,12 +69,21 @@ define(['scribe-common/src/element'], function (element) {
         // If in a <p>
         var blockContainer = findBlockContainer(container);
         if (blockContainer && blockContainer.tagName === 'P') {
+          // Warning: There is no guarantee that `container` will be a text node
+          // Failing Firefox tests
+
           var startOfLineIsUList = isUnorderedListChar(container.textContent[0]);
           if (isUnorderedListChar(lastChar) && currentChar === 'Space' && startOfLineIsUList) {
             listCommand = 'insertUnorderedList';
           }
 
-          var startOfLineIsOList = container.textContent === '1.';
+          // Some browsers split text nodes randomly, so we can't be sure the
+          // prefix will be contained within a single text node (observed in
+          // Firefox)
+          var startOfLineIsOList = [
+            container.previousSibling && container.previousSibling.textContent,
+            container.textContent
+          ].join('').slice(0, 2) === '1.';
           if (preLastChar === '1' && lastChar === '.' && currentChar === 'Space' && startOfLineIsOList) {
             listCommand = 'insertOrderedList';
           }
