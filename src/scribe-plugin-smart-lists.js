@@ -38,8 +38,13 @@ define(['scribe-common/src/element'], function (element) {
          * parent elements.
          * As per: http://jsbin.com/rotus/1/edit?js,output,console
          */
-        var textNode = (container.nodeType === Node.TEXT_NODE && container)
-          || (container.firstChild.nodeType === Node.TEXT_NODE && container.firstChild)
+        var textNode;
+        if (container.nodeType === Node.TEXT_NODE) {
+          textNode = container;
+        } else if (container.firstChild.nodeType === Node.TEXT_NODE) {
+          textNode = container.firstChild;
+        }
+
         if (textNode) {
           textNode.parentNode.removeChild(textNode);
         } else {
