@@ -36,7 +36,7 @@ define(['scribe-common/src/element'], function (element) {
         /**
          * Firefox: Selection object never gets access to text nodes, only
          * parent elements.
-         * As per: http://jsbin.com/rotus/1/edit
+         * As per: http://jsbin.com/rotus/1/edit?js,output,console
          */
         var textNode = (container.nodeType === Node.TEXT_NODE && container)
           || (container.firstChild.nodeType === Node.TEXT_NODE && container.firstChild)
