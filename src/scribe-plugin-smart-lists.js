@@ -32,7 +32,7 @@ define(['scribe-common/src/element'], function (element) {
 
       function removeSelectedTextNode() {
         var selection = new scribe.api.Selection();
-        var container = selection.range.commonAncestorContainer;
+        var container = selection.selection.anchorNode;
         if (container.nodeType === Node.TEXT_NODE) {
           container.parentNode.removeChild(container);
         } else {
