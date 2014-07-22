@@ -30,7 +30,7 @@ describe.skip('smart lists plugin', function () {
 
   beforeEach(function () {
     return driver.executeAsyncScript(function (done) {
-      require(['../../bower_components/scribe-plugin-smart-lists/src/scribe-plugin-smart-lists'], function (smartLists) {
+      require(['../../src/scribe-plugin-smart-lists'], function (smartLists) {
         window.scribe.use(smartLists());
         done();
       });
