@@ -46,7 +46,15 @@ define(['scribe-common/src/element'], function (element) {
         }
 
         if (textNode) {
-          textNode.parentNode.removeChild(textNode);
+          var parentNode = textNode.parentNode;
+          /**
+           * Firefox: Given text of "1.", we sometimes have two text nodes
+           * (why?): "1" and "."
+           */
+          if (textNode.previousSibling) {
+            parentNode.removeChild(textNode.previousSibling);
+          }
+          parentNode.removeChild(textNode);
         } else {
           throw new Error('Cannot empty non-text node!');
         }
