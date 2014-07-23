@@ -86,6 +86,14 @@ define(['scribe-common/src/element'], function (element) {
             listCommand = 'insertUnorderedList';
           }
 
+          /**
+           * Firefox: Selection object never gets access to text nodes, only
+           * parent elements. This means that *sometimes* unordered lists
+           * will not work.
+           * As per: http://jsbin.com/rotus/2/edit?js,output,console
+           * Bugzilla: https://bugzilla.mozilla.org/show_bug.cgi?id=1042701
+           */
+
           // Some browsers split text nodes randomly, so we can't be sure the
           // prefix will be contained within a single text node (observed in
           // Firefox)
