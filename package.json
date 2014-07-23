@@ -1,6 +1,6 @@
 {
   "name": "scribe-plugin-smart-lists",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "src/scribe-plugin-smart-lists.js",
   "dependencies": {
     "lodash-amd": "~2.4.1"
