@@ -1,5 +1,7 @@
 # scribe-plugin-smart-lists [![Build Status](https://travis-ci.org/guardian/scribe-plugin-smart-lists.svg?branch=master)](https://travis-ci.org/guardian/scribe-plugin-smart-lists)
 
+[See an example][example].
+
 ## Installation
 ```
 bower install scribe-plugin-smart-lists
@@ -20,3 +22,7 @@ require(['scribe', 'scribe-plugin-smart-lists'], function (Scribe, scribePluginS
   scribe.use(scribePluginSmartLists());
 });
 ```
+
+You can [see a live example here][example], or [view the code here](https://github.com/guardian/scribe-plugin-smart-lists/tree/gh-pages).
+
+[example]: http://guardian.github.io/scribe-plugin-smart-lists
