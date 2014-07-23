@@ -56,6 +56,16 @@ define(['scribe-common/src/element'], function (element) {
             parentNode.removeChild(textNode.previousSibling);
           }
           parentNode.removeChild(textNode);
+          /**
+           * Chrome: Sometimes a BR is not inserted. Unable to reproduce in the
+           * tests, oddly.
+           * FIXME: If this plugin used formatters, a BR would be inserted
+           * automatically.
+           */
+          if (parentNode.childNodes.length === 0) {
+            var brElement = document.createElement('br');
+            parentNode.appendChild(brElement);
+          }
         } else {
           throw new Error('Cannot empty non-text node!');
         }
