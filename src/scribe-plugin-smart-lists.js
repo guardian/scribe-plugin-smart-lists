@@ -32,9 +32,29 @@ define(['scribe-common/src/element'], function (element) {
 
       function removeSelectedTextNode() {
         var selection = new scribe.api.Selection();
-        var container = selection.range.commonAncestorContainer;
+        var container = selection.selection.anchorNode;
+        /**
+         * Firefox: Selection object never gets access to text nodes, only
+         * parent elements.
+         * As per: http://jsbin.com/rotus/2/edit?js,output,console
+         */
+        var textNode;
         if (container.nodeType === Node.TEXT_NODE) {
-          container.parentNode.removeChild(container);
+          textNode = container;
+        } else if (container.firstChild.nodeType === Node.TEXT_NODE) {
+          textNode = container.firstChild;
+        }
+
+        if (textNode) {
+          var parentNode = textNode.parentNode;
+          /**
+           * Firefox: Given text of "1.", we sometimes have two text nodes
+           * (why?): "1" and "."
+           */
+          if (textNode.previousSibling) {
+            parentNode.removeChild(textNode.previousSibling);
+          }
+          parentNode.removeChild(textNode);
         } else {
           throw new Error('Cannot empty non-text node!');
         }
@@ -57,12 +77,21 @@ define(['scribe-common/src/element'], function (element) {
         // If in a <p>
         var blockContainer = findBlockContainer(container);
         if (blockContainer && blockContainer.tagName === 'P') {
+          // Warning: There is no guarantee that `container` will be a text node
+          // Failing Firefox tests
+
           var startOfLineIsUList = isUnorderedListChar(container.textContent[0]);
           if (isUnorderedListChar(lastChar) && currentChar === 'Space' && startOfLineIsUList) {
             listCommand = 'insertUnorderedList';
           }
 
-          var startOfLineIsOList = container.textContent === '1.';
+          // Some browsers split text nodes randomly, so we can't be sure the
+          // prefix will be contained within a single text node (observed in
+          // Firefox)
+          var startOfLineIsOList = [
+            container.previousSibling && container.previousSibling.textContent,
+            container.textContent
+          ].join('').slice(0, 2) === '1.';
           if (preLastChar === '1' && lastChar === '.' && currentChar === 'Space' && startOfLineIsOList) {
             listCommand = 'insertOrderedList';
           }
