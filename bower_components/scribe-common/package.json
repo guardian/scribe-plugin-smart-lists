@@ -1,0 +1,12 @@
+{
+  "name": "scribe-common",
+  "version": "0.0.4",
+  "main": "src/scribe-common.js",
+  "dependencies": {
+    "lodash-amd": "~2.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/guardian/scribe-common.git"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "example",
+  "dependencies": {
+    "requirejs": "~2.1.14",
+    "scribe": "0.1.17",
+    "scribe-plugin-smart-lists": "0.1.3"
+  }
+}

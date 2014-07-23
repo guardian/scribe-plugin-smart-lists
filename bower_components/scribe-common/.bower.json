@@ -1,0 +1,17 @@
+{
+  "name": "scribe-common",
+  "version": "0.0.4",
+  "dependencies": {
+    "lodash-amd": "2.4.1"
+  },
+  "homepage": "https://github.com/guardian/scribe-common",
+  "_release": "0.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.4",
+    "commit": "1703b97ff2a86a98520be86e66a4e2d362d705c0"
+  },
+  "_source": "git://github.com/guardian/scribe-common.git",
+  "_target": "0.0.4",
+  "_originalSource": "scribe-common"
+}
