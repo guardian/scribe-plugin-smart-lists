@@ -82,7 +82,8 @@ define(['scribe-common/src/element'], function (element) {
           // Failing Firefox tests
 
           var startOfLineIsUList = isUnorderedListChar(container.textContent[0]);
-          if (isUnorderedListChar(lastChar) && currentChar === 'Space' && startOfLineIsUList) {
+          var cursorIsInSecondPosition = selection.range.endOffset === 1;
+          if (isUnorderedListChar(lastChar) && currentChar === 'Space' && startOfLineIsUList && cursorIsInSecondPosition) {
             listCommand = 'insertUnorderedList';
           }
 
