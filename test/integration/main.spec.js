@@ -191,14 +191,13 @@ describe('smart lists plugin', function () {
   });
 
   when('the user types "*notalist* "', function () {
-    beforeEach(function () {
-      return scribeNode.sendKeys('*notalist* ');
-    });
-
-    it('should not create a list', function () {
-      return scribeNode.getInnerHTML().then(function (innerHTML) {
-        expect(innerHTML).to.have.html('<p>*notalist*&nbsp;</p>');
+    helpers.givenContentOf('*notalist* ', function () {
+      it('should not create a list', function () {
+        return scribeNode.getInnerHTML().then(function (innerHTML) {
+          expect(innerHTML).to.have.html('<p>*notalist* </p>');
+        });
       });
     });
   });
+
 });
