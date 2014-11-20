@@ -1,4 +1,6 @@
-
+machine:
+  environment:
+    BROWSER_NAME: 'chrome'
 dependencies:
   post:
     - ./node_modules/scribe-test-harness/bin/postinstall.sh
