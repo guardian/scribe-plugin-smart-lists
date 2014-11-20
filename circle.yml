@@ -5,3 +5,4 @@ machine:
 dependencies:
   post:
     - cp ./node_modules/scribe-test-harness/bin/run-tests.sh .
+    - bower install
