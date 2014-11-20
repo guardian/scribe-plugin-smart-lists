@@ -1,5 +1,4 @@
 
-test:
-  pre:
-    - npm install -g bower
-    - bower install
+dependencies:
+  post:
+    - ./node_modules/scribe-test-harness/bin/postinstall.sh
