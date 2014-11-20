@@ -8,8 +8,3 @@ dependencies:
 test:
   pre:
     - bower install
-    - webdriver-manager update
-    - webdriver-manager start:
-        background: true
-  override:
-    - ./run-tests.sh
