@@ -2,3 +2,4 @@
 dependencies:
   post:
     - ./node_modules/scribe-test-harness/bin/postinstall.sh
+    - chmod u+x run-tests.sh
