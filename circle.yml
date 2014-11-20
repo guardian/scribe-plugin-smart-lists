@@ -2,7 +2,3 @@ machine:
   environment:
     BROWSER_NAME: 'chrome'
     TEST_SERVER_PORT: '4466'
-dependencies:
-  post:
-    - ./node_modules/scribe-test-harness/bin/postinstall.sh
-    - chmod u+x run-tests.sh
