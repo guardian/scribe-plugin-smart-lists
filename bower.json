@@ -6,8 +6,7 @@
   },
   "devDependencies": {
     "requirejs": "~2.1.9",
-    "scribe": "guardian/scribe#master",
-    "scribe-test-harness": "~0.0.8"
+    "scribe": "guardian/scribe#master"
   },
   "version": "0.1.2"
 }
