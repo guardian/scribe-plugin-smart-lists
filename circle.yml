@@ -1,6 +1,0 @@
-
-test:
-  override:
-    - npm test:
-      environment:
-        TEST_BROWSER_NAME: chrome
