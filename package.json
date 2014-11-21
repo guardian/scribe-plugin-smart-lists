@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "chai": "~1.9.1",
-    "http-server": "~0.6.1",
+    "http-server": "^0.7.3",
     "mocha": "~1.18.2",
     "plumber": "~0.3.0",
     "plumber-all": "~0.3.0",
@@ -16,8 +16,9 @@
     "plumber-requirejs": "~0.3.0",
     "plumber-uglifyjs": "~0.3.0",
     "plumber-write": "~0.3.0",
+    "scribe-test-harness": "~0.0.13",
     "selenium-webdriver": "~2.41.0",
-    "scribe-test-harness": "~0.0.13"
+    "webdriver-manager": "^1.0.1"
   },
   "scripts": {
     "test": "./run-tests.sh"
