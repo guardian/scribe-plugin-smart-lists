@@ -2,9 +2,6 @@ machine:
   environment:
     BROWSER_NAME: 'chrome'
     TEST_SERVER_PORT: '7777'
-dependencies:
-  post:
-    - cp ./node_modules/scribe-test-harness/bin/run-tests.sh .
 test:
   pre:
     - bower install
