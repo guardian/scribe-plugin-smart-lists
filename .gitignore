@@ -4,4 +4,4 @@ bower_components
 build
 /vendor
 run-tests.sh
-
+*.log

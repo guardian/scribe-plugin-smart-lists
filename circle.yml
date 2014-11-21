@@ -8,3 +8,4 @@ dependencies:
 test:
   pre:
     - bower install
+    - webdriver-manager start
