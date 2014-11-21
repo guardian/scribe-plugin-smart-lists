@@ -3,7 +3,8 @@
   "version": "0.1.5",
   "main": "src/scribe-plugin-smart-lists.js",
   "dependencies": {
-    "lodash-amd": "~2.4.1"
+    "lodash-amd": "~2.4.1",
+    "webdriver-manager": "^1.0.1"
   },
   "devDependencies": {
     "chai": "~1.9.1",
