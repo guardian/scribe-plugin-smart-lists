@@ -10,7 +10,7 @@ cache:
     - bower_components
     
 addons:
-  sauce_connect: true
+  sauce_connect:
     username: scribe-ci
     access_key: 4be9eeed-61de-4948-b18d-f7f655e9e4b0
 
