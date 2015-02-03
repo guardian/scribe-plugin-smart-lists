@@ -8,7 +8,7 @@
   "devDependencies": {
     "chai": "~1.9.1",
     "http-server": "~0.6.1",
-    "mocha": "~1.18.2",
+    "mocha": "~2.1.0",
     "plumber": "~0.4.0",
     "plumber-all": "~0.4.0",
     "plumber-glob": "~0.4.0",
