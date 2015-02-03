@@ -5,8 +5,7 @@
     "scribe-common": "0.0.11"
   },
   "devDependencies": {
-    "requirejs": "~2.1.9",
-    "immutable": "~3.6.2"
+    "requirejs": "~2.1.9"
     "scribe": "guardian/scribe#master"
   },
   "version": "0.1.2"
