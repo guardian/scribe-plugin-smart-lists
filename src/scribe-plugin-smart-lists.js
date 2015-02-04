@@ -1,4 +1,4 @@
-define(['scribe-common/src/element'], function (element) {
+define([], function () {
 
   'use strict';
 
@@ -18,17 +18,17 @@ define(['scribe-common/src/element'], function (element) {
       return string === '*' || string === '-' || string === '•';
     }
 
-    function findBlockContainer(node) {
-      while (node && ! element.isBlockElement(node)) {
-        node = node.parentNode;
-      }
-
-      return node;
-    }
-
     return function (scribe) {
 
       var preLastChar, lastChar, currentChar;
+
+      function findBlockContainer(node) {
+        while (node && ! scribe.element.isBlockElement(node)) {
+          node = node.parentNode;
+        }
+
+        return node;
+      }
 
       function removeSelectedTextNode() {
         var selection = new scribe.api.Selection();
