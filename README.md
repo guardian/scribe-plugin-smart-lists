@@ -1,5 +1,7 @@
 # scribe-plugin-smart-lists [![Build Status](https://travis-ci.org/guardian/scribe-plugin-smart-lists.svg?branch=master)](https://travis-ci.org/guardian/scribe-plugin-smart-lists)
 
+Transforms text bullets into HTML lists
+
 [See an example][example].
 
 ## Installation
