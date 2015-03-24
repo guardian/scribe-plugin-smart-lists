@@ -5,7 +5,7 @@
   },
   "devDependencies": {
     "requirejs": "~2.1.9",
-    "scribe": "guardian/scribe#master"
+    "scribe": "guardian/scribe#v0.1.17-src"
   },
   "version": "0.1.2"
 }
