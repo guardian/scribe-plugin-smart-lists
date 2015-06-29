@@ -19,6 +19,8 @@
     "scribe-test-harness": "~0.0.13"
   },
   "scripts": {
+    "postinstall": "bower install",
+    "test-firefox": "BROWSER=firefox ./run-tests.sh",
     "test": "./run-tests.sh"
   },
   "repository": {
