@@ -15,13 +15,13 @@
     "plumber-requirejs": "~0.4.0",
     "plumber-uglifyjs": "~0.4.0",
     "plumber-write": "~0.4.0",
-    "selenium-webdriver": "~2.41.0",
-    "scribe-test-harness": "~0.0.13",
+    "selenium-webdriver": "~2.43",
+    "scribe-test-harness": "0.0.20",
     "bower": "~1"
   },
   "scripts": {
     "postinstall": "node_modules/bower/bin/bower install",
-    "test-firefox": "BROWSER=firefox ./run-tests.sh",
+    "test-firefox": "BROWSER_NAME=firefox ./run-tests.sh",
     "test": "./run-tests.sh"
   },
   "repository": {
