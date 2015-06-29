@@ -1,0 +1,67 @@
+<body>
+<style>
+  button {
+    height: 3em;
+  }
+
+  .active {
+    border-style: inset;
+  }
+
+  .rte, .rte-toolbar {
+    display: block;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  .rte {
+    border: 1px solid gray;
+    height: 300px;
+    overflow: auto;
+  }
+  .rte-output {
+    width: 100%;
+    height: 10em;
+  }
+</style>
+<script src="../bower_components/requirejs/require.js"></script>
+<script>
+require({
+  paths: {
+    'lodash-amd': '../bower_components/lodash-amd',
+    'immutable': '../bower_components/immutable/dist/immutable'
+  }
+}, [
+  '../bower_components/scribe/src/scribe',
+  '../src/scribe-plugin-smart-lists'
+], function (
+  Scribe,
+  scribeSmartLists
+) {
+  var scribe = new Scribe(document.querySelector('.rte'));
+  window.scribe = scribe;
+
+  scribe.setContent('<p>Hello, List World!<\/p>');
+
+  scribe.use(scribeSmartLists());
+
+  scribe.on('content-changed', updateHtml);
+
+  function updateHtml() {
+    document.querySelector('.rte-output').value = scribe.getHTML();
+  }
+
+  updateHtml();
+});
+</script>
+
+<h1>Scribe Curly Quotes</h1>
+
+<div class="rte"></div>
+<section>
+  <h2>Output</h2>
+  <textarea class="rte-output" readonly></textarea>
+</section>
+</body>
