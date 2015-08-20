@@ -3,7 +3,6 @@
   "version": "0.1.7",
   "main": "src/scribe-plugin-smart-lists.js",
   "dependencies": {
-    "lodash-amd": "~2.4.1"
   },
   "devDependencies": {
     "chai": "~1.9.1",
@@ -16,7 +15,7 @@
     "plumber-uglifyjs": "~0.4.0",
     "plumber-write": "~0.4.0",
     "selenium-webdriver": "~2.41.0",
-    "scribe-test-harness": "~0.0.13"
+    "scribe-test-harness": "~0.0.21"
   },
   "scripts": {
     "test": "./run-tests.sh"
