@@ -23,7 +23,7 @@ define([], function () {
       var preLastChar, lastChar, currentChar;
 
       function findBlockContainer(node) {
-        while (node && ! scribe.element.isBlockElement(node)) {
+        while (node && ! scribe.node.isBlockElement(node)) {
           node = node.parentNode;
         }
 
