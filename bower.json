@@ -1,11 +1,12 @@
 {
   "name": "scribe-plugin-smart-lists",
   "dependencies": {
-    "lodash-amd": "2.4.1"
   },
   "devDependencies": {
-    "requirejs": "~2.1.9",
-    "scribe": "guardian/scribe#master"
+    "requirejs": "~2.1.20",
+    "scribe": "guardian/scribe#master",
+    "immutable" : "3.7.3",
+    "lodash-amd": "~3.5"
   },
   "version": "0.1.2"
 }
