@@ -34,12 +34,13 @@ define([], function () {
         var selection = new scribe.api.Selection();
         var container = selection.selection.anchorNode;
 
-        console.log(container);
         if(container.data) {
           container.data = container.data.replace(/^([•*-.\d]+)/, "");
         }
 
-        if(!container.data && container.firstChild.nodeType === Node.TEXT_NODE) {
+        if(!container.data
+          && container.firstChild
+          && container.firstChild.nodeType === Node.TEXT_NODE) {
           container.removeChild(container.firstChild);
         }
 
